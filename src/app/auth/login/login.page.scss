@@ -1,0 +1,10 @@
+div {
+  &.logo {
+    width: 100%;
+    text-align: center;
+
+    span{
+      margin-left: 8px;
+    }
+  }
+}

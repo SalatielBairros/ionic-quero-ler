@@ -1,0 +1,30 @@
+<ion-content class="ion-padding">
+  <form #form="ngForm" (ngSubmit)="login()">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+          <ion-item lines="none">
+            <div class="logo">
+              <ion-icon name="book-outline"></ion-icon>
+              <span>Quero Ler</span>
+            </div>
+          </ion-item>
+          <div class="ion-text-center">
+            <h3>Login</h3>
+          </div>
+          <div class="ion-padding">
+            <ion-item>
+              <ion-input placeholder="Digite seu e-mail" name="email" type="email" required inputmode="email" maxlength="200" [(ngModel)]="loginData.email" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input placeholder="Digite sua senha" name="password" type="password" required maxlength="200" minlength="2" [(ngModel)]="loginData.password"></ion-input>
+            </ion-item>
+          </div>
+          <div class="ion-padding">
+            <ion-button expand="block" [disabled]="form.invalid" type="submit" class="ion-no-margin">Login</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
