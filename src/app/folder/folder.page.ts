@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FolderPage implements OnInit {
   public folder: string;
+  public showFrancine = false;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
@@ -15,4 +16,7 @@ export class FolderPage implements OnInit {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
+  public changeShow(): void {
+    this.showFrancine = !this.showFrancine;
+  }
 }

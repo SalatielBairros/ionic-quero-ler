@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "firstApp",
+  "appId": "com.sbairros.queroler",
+  "appName": "Quero Ler",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
