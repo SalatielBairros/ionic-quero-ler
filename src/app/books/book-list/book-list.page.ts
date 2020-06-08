@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GoogleBooksService } from '../services/google-books.service';
 import { BookModel } from '../book.model';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 const MIN_SEARCH_LENGHT = 3;
 
@@ -13,7 +14,8 @@ export class BookListPage implements OnInit {
 
   books = new Array<BookModel>();
 
-  constructor(private google: GoogleBooksService) { }
+  constructor(private google: GoogleBooksService,
+              private barcodeScanner: BarcodeScanner) { }
 
   ngOnInit() {
   }
@@ -23,5 +25,11 @@ export class BookListPage implements OnInit {
     if (keyWord && keyWord.length > MIN_SEARCH_LENGHT) {
       this.google.list(event.detail.value).subscribe(ret => this.books = ret);
     }
+  }
+
+  public openScaner(){
+    this.barcodeScanner.scan().then(value => {
+      console.log(value);
+    }).catch(err => console.log(err));
   }
 }
