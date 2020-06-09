@@ -17,4 +17,5 @@ export class BookModel {
     large: string;
   };
   isbn: string;
+  status: number;
 }

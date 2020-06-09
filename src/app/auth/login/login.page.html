@@ -12,12 +12,15 @@
           <div class="ion-text-center">
             <h3>Login</h3>
           </div>
+          <p *ngIf="hasMessage">{{error}}</p>
           <div class="ion-padding">
             <ion-item>
-              <ion-input placeholder="Digite seu e-mail" name="email" type="email" required inputmode="email" maxlength="200" [(ngModel)]="loginData.email" ></ion-input>
+              <ion-input placeholder="Digite seu e-mail" name="email" type="email" required inputmode="email"
+                maxlength="200" [(ngModel)]="loginData.email"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input placeholder="Digite sua senha" name="password" type="password" required maxlength="200" minlength="2" [(ngModel)]="loginData.password"></ion-input>
+              <ion-input placeholder="Digite sua senha" name="password" type="password" required maxlength="200"
+                minlength="2" [(ngModel)]="loginData.password"></ion-input>
             </ion-item>
           </div>
           <div class="ion-padding">

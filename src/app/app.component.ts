@@ -7,6 +7,7 @@ import { AuthenticationService } from './auth/authentication.service';
 import { Router } from '@angular/router';
 import { MenuModel } from './shared/menu/menu.model';
 import { MenuService } from './shared/menu/menu.service';
+import { DatabaseProvider } from './core/database-provider.service';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     private authentication: AuthenticationService,
     private router: Router,
-    private menu: MenuService
+    private menu: MenuService,
+    private dbProvider: DatabaseProvider
   ) {
     this.initializeApp();
   }
@@ -33,13 +35,28 @@ export class AppComponent implements OnInit {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      this.authentication.authenticationState.subscribe(state => {
-        if (state) {
-          this.router.navigate(['']);
-        } else {
+      this.dbProvider.createDatabase()
+        .then(() => {
+          this.authentication.authenticationState.subscribe(state => {
+            if (state) {
+              this.router.navigate(['']);
+            } else {
+              this.router.navigate(['login']);
+            }
+          });
+        })
+        .catch(() => {
           this.router.navigate(['login']);
-        }
-      });
+        });
+
+      // this.authentication.authenticationState.subscribe(state => {
+      //   if (state) {
+      //     this.router.navigate(['']);
+      //   } else {
+      //     this.router.navigate(['login']);
+      //   }
+      // });
+
     });
   }
 
