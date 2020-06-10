@@ -1,8 +1,9 @@
 export class BookModel {
   constructor() {
-    this.thumbs = { small: '', large: '' };
+    this.thumbs = { small: "", large: "" };
   }
 
+  id: number;
   externalId: string;
   title: string;
   subtitle: string;
