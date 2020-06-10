@@ -8,17 +8,28 @@
 </ion-header>
 
 <ion-content>
-    <ion-list class="ion-padding">
-      <ion-item *ngFor="let book of books">
-        <ion-thumbnail slot="start">
-          <img [src]="book.thumbs.small">
-        </ion-thumbnail>
-        <ion-label>{{book.title}}</ion-label>
-      </ion-item>
-    </ion-list>
+  <ion-list class="ion-padding">
+    <ion-item *ngFor="let book of books">
+      <ion-thumbnail slot="start">
+        <img [src]="book.thumbs.small">
+      </ion-thumbnail>
+      <ion-label>{{book.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <p>{{readIsbn}}</p>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="openScaner()">
+    <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="openScaner()">
+        <ion-icon name="barcode"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="navigateToAdd()">
+        <ion-icon name="book"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
   </ion-fab>
 </ion-content>

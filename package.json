@@ -12,7 +12,8 @@
     "e2e": "ng e2e",
     "deploy": "ionic capacitor run android -l --address=192.168.0.6",
     "add-android": "ionic capacitor add android",
-    "ide": "ionic capacitor run android"
+    "ide": "ionic capacitor run android",
+    "update": "ionic cap sync"
   },
   "private": true,
   "dependencies": {

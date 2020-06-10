@@ -3,6 +3,7 @@ import { DatabaseProvider } from "src/app/core/database-provider.service";
 import { BookModel } from "../book.model";
 import { IProvider } from "../../core/provider.interface";
 import { SQLiteObject } from "@ionic-native/sqlite/ngx";
+import { Queries } from "src/app/core/database-queries";
 
 @Injectable()
 export class BooksProvider implements IProvider<BookModel> {
