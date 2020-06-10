@@ -11,7 +11,7 @@ Aplicativo de controle de livros e empréstimos integrado com APIs externas util
 Para executar o projeto pela primeira vez é necessário antes rodar os seguintes comandos:
 
 ```
-npm instal
+npm install
 npm run add-android
 npm run update
 ```
