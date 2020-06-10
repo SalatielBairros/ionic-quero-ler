@@ -5,7 +5,7 @@ Aplicativo de controle de livros e empréstimos integrado com APIs externas util
 * Android Studio
 * [Ionic](https://ionicframework.com/docs/intro/cli)
 * [Angular](https://angular.io/guide/setup-local) - Atualmente versão 8.
-* [NPM] (https://www.npmjs.com/)
+* [NPM](https://www.npmjs.com/)
 
 ## Rodando o projeto
 Para executar o projeto pela primeira vez é necessário antes rodar os seguintes comandos:
